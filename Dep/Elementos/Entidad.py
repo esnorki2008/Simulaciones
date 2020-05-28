@@ -1,6 +1,31 @@
-class Entidad:
-    Vida=0
-    def __init__(self,Vida):
-        self.Vida =Vida
-    def hola(self):
-        Pit=3
+from abc import ABC, abstractmethod
+
+class Entidad(ABC):
+   Vida=0
+   Tipo=None
+   PosActual=0,0
+   Limites=0,0
+   @abstractmethod
+   def __init__(self,Vida,Limites):
+        pass
+        
+   @abstractmethod
+   def Mover(self):
+       pass      
+   @abstractmethod
+   def EstaVivo(self):
+       pass 
+
+   @abstractmethod
+   def BuscarAlimento(self):
+       pass 
+  
+   @abstractmethod
+   def DevolverTipo(self):
+       pass 
+
+   def Ruido(self):
+        print("Soy De Tipo " +str(self.Tipo))
+   
+   def VidaActual(self):
+        print("Vida " +str(self.Vida))
