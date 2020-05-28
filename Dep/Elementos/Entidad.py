@@ -29,3 +29,15 @@ class Entidad(ABC):
    
    def VidaActual(self):
         print("Vida " +str(self.Vida))
+
+   @abstractmethod
+   def Expandir(self,*args):
+       pass
+   
+   @abstractmethod
+   def Color(self):
+       pass
+
+   @abstractmethod
+   def Acciones(self):
+       pass

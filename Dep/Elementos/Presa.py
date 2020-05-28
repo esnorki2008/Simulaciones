@@ -33,3 +33,12 @@ class Presa(Entidad.Entidad):
         
 
         self.PosActual=(X,Y)
+
+    def Expandir(self):
+       pass
+   
+    def Color(self):
+       return (81,121,80)
+
+    def Acciones(self):
+       pass

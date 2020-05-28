@@ -1,5 +1,5 @@
-from Elementos import Terreno
-class Planta(Terreno.Terreno):
+from Elementos import Entidad
+class Planta(Entidad.Entidad):
     def __init__(self,Vida,Limites):
         self.Vida =Vida
         self.Tipo="Planta"
@@ -16,3 +16,15 @@ class Planta(Terreno.Terreno):
 
     def BuscarAlimento(self):
        pass 
+
+    def Mover(self):
+        pass
+
+    def Expandir(self,ListaPlanta):
+       print(ListaPlanta)
+   
+    def Color(self):
+       return (24,118,20)
+
+    def Acciones(self):
+       pass

@@ -9,20 +9,21 @@ screen = pygame.display.set_mode(size)
 
 
 
-Tor=[]
-Tor.append((25,50))
-Tor.append((40,40))
-#Tor.sort()
 
 #print(Tor[0]==(2,2))
 
 Herbi1= Presa.Presa(3,size)
-Herbi1.PosActual=Tor[0]
+Herbi1.PosActual=(25,50)
 Herbi2= Presa.Presa(3,size)
-Herbi2.PosActual=Tor[1]
-ListaHerbivoro=[Herbi1,Herbi2]
+Herbi2.PosActual=(40,40)
+Planta1=Planta.Planta(1,size)
+Planta1.PosActual=(15,30)
+Planta2=Planta.Planta(1,size)
+Planta2.PosActual=(15,38)
 
 
+ListaHerbivoro=[]#[Herbi1,Herbi2]
+ListaPnlanta=[Planta1,Planta2]
 
 
 def IniciarJogo():
@@ -34,8 +35,12 @@ def IniciarJogo():
 
         pygame.time.wait(200)
         for Herbi in ListaHerbivoro:            
-            screen.set_at((Herbi.PosActual[0], Herbi.PosActual[1]), (255,255,255))
+            screen.set_at((Herbi.PosActual[0], Herbi.PosActual[1]), Herbi.Color())
             Herbi.Mover()
+
+        for Planta in ListaPnlanta:            
+            screen.set_at((Planta.PosActual[0], Planta.PosActual[1]), Planta.Color())
+            Planta.Expandir(ListaPnlanta)
 
         pygame.display.update() 
        
