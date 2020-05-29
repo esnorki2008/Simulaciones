@@ -41,3 +41,11 @@ class Entidad(ABC):
    @abstractmethod
    def Acciones(self):
        pass
+
+   def ColocarNuevo(self,Lista,Objeto):
+       for Obj in Lista:
+           if Obj.PosActual==Objeto.PosActual :
+               return
+           else :
+                Lista.append(Objeto)
+       pass
